@@ -1,8 +1,11 @@
-var bemReact = require('../../lib/bemReact'),
+var react = require('react'),
+    BemMixin = require('../../lib/bemMixin'),
     Button = require('./button'),
     Popup = require('./popup');
 
-module.exports = bemReact.createClass({
+module.exports = react.createClass({
+    mixins : [BemMixin],
+
     getInitialState : function() {
         return {
             opened : this.props.opened
@@ -13,7 +16,7 @@ module.exports = bemReact.createClass({
         this.setState({ opened : !this.state.opened });
     },
 
-    render : function() {
+    renderToBemJson : function() {
         return {
             block : 'dropdown',
             mods : {

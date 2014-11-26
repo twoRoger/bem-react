@@ -1,7 +1,10 @@
-var bemReact = require('../../lib/bemReact');
+var react = require('react'),
+    BemMixin = require('../../lib/bemMixin');
 
-module.exports = bemReact.createClass({
-    render : function() {
+module.exports = react.createClass({
+    mixins : [BemMixin],
+
+    renderToBemJson : function() {
         return {
             block : 'popup',
             mods : {

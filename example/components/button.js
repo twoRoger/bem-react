@@ -1,6 +1,9 @@
-var bemReact = require('../../lib/bemReact');
+var react = require('react'),
+    BemMixin = require('../../lib/bemMixin');
 
-module.exports = bemReact.createClass({
+module.exports = react.createClass({
+    mixins : [BemMixin],
+
     getInitialState : function() {
         return {
             pressed : false,
@@ -30,7 +33,7 @@ module.exports = bemReact.createClass({
         this.setState({ focused : false });
     },
 
-    render : function() {
+    renderToBemJson : function() {
         return {
             block : 'button',
             mods : {
