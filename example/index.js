@@ -1,6 +1,6 @@
-var bemReact = require('../lib/bemReact'),
+var react = require('react'),
     Dropdown = require('./components/dropdown');
 
-bemReact.render(
-    { block : Dropdown, children : 'dropdown content' },
+react.render(
+    react.createElement(Dropdown, null, 'dropdown content'),
     document.body);
